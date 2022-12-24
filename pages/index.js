@@ -1,9 +1,33 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
+
+import Navbar from '../components/Navbar';
+
+import {
+  DispatchCursor,
+  CURSOR_SHOW,
+  CURSOR_HIDE,
+  CURSOR_COLOR,
+  CURSOR_TEXT,
+  CURSOR_EXCLUSION,
+  CURSOR_STICKY,
+  CURSOR_MAGNETIC,
+  CURSOR_REVEAL,
+  CURSOR_UNDERLINE,
+} from "haspr-cursor";
+
+import avatar1 from '../assets/image/avatar1.png'
+import avatar2 from '../assets/image/avatar2.png'
+import avatar3 from '../assets/image/avatar3.png'
+import avatar4 from '../assets/image/avatar4.png'
+import avatar5 from '../assets/image/avatar5.png'
+
+import gradImg1 from '../assets/image/1.png'
+import gradImg2 from '../assets/image/2.png'
+import gradImg3 from '../assets/image/3.png'
 
 export default function Home() {
+  const dispatch = DispatchCursor()
   return (
     <>
       <Head>
@@ -12,8 +36,84 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Cursor isGelly={true} />
-      <main>
+
+      <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
+        
+        <Navbar />
+        <div className="flex relative">
+          <Image
+            alt="gradient"
+            src={gradImg1}
+            className="w-14 h-14 rounded-sm absolute top-28 right-4"
+          />
+          <Image
+            alt="gradient"
+            src={gradImg3}
+            className="w-14 h-14 rounded-sm absolute top-[600px] right-44"
+          />
+          <Image
+            alt="gradient"
+            src={gradImg2}
+            className="w-14 h-14 rounded-sm absolute top-40 -left-20"
+          />
+        </div>
+        <section className="flex justify-between md:flex-col h-screen">
+          <div className="flex flex-col gap-14 justify-center h-full flex-1">
+            <h1 className="text-8xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
+              Hi, I'm Virendra Khorwal.
+            </h1>
+            <p
+              onMouseEnter={() =>
+                CURSOR_REVEAL(dispatch, "START", "imRevealing", "SMALL")
+              }
+              onMouseLeave={() => CURSOR_REVEAL(dispatch, "END", "imRevealing")}
+              className="text-xl text-pink1 font-pt"
+            >
+              <span data-magnetism id="imRevealing" className="">
+                Web Developer
+              </span>
+              <span data-magnetism id="imRevealing" className="">
+                {" "}
+                | App Developer
+              </span>
+              <span data-magnetism id="imRevealing" className="">
+                {" "}
+                | UI designer
+              </span>
+            </p>
+          </div>
+          <div
+            onMouseEnter={() => CURSOR_EXCLUSION(dispatch, "START", "LARGE")}
+            onMouseLeave={() => CURSOR_EXCLUSION(dispatch, "END")}
+            className="flex flex-1"
+          >
+            <Image
+              className="flex absolute w-44 rounded-lg top-36 z-10 right-72 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              src={avatar1}
+              alt="Virendra"
+            />
+            <Image
+              className="flex absolute w-44 rounded-lg right-44 top-60 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              src={avatar2}
+              alt="Virendra"
+            />
+            <Image
+              className="flex absolute w-44 rounded-lg right-[460px] top-32 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              src={avatar3}
+              alt="Virendra"
+            />
+            <Image
+              className="flex absolute w-44 rounded-lg right-[600px] top-56 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              src={avatar4}
+              alt="Virendra"
+            />
+            <Image
+              className="flex absolute w-44 rounded-lg right-96 top-96 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              src={avatar5}
+              alt="Virendra"
+            />
+          </div>
+        </section>
       </main>
     </>
   );
