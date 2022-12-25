@@ -76,14 +76,18 @@ const LinkTree = () => {
           {Links.map((link) => (
             <div
               key={link.link}
-              onMouseEnter={() => CURSOR_TEXT(dispatch, `Visit ${link.title} Profile`, "RED")}
+              onMouseEnter={() =>
+                CURSOR_TEXT(dispatch, `Visit ${link.title} Profile`, "RED")
+              }
               onMouseLeave={() => CURSOR_TEXT(dispatch, "END")}
               className="flex w-96 gap-4 rounded-sm p-4 items-center
               bg-orange-300 hover:shadow-2xl hover:shadow-indigo-500/10"
             >
               <Image className="w-10 h-10" src={link.logo} alt={link.title} />
               <h1 className="text-darkBlack text-lg">
-                <Link target="_blank" href={link.link}>{link.title} | Virendra Khorwal</Link>
+                <Link className="cursor-none" target="_blank" href={link.link}>
+                  {link.title} | Virendra Khorwal
+                </Link>
               </h1>
             </div>
           ))}

@@ -36,7 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
         <div className="flex relative">
           <Image
             alt="gradient"
@@ -111,18 +111,18 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="py-10 h-screen">
+        {/* <section className="py-10 h-screen">
           <PorjectCard />
         </section>
         <section className="py-10 h-screen">
           <PorjectCard />
-        </section>
-        <footer className='mt-10 h-96 flex items-center flex-col'>
-          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
+        </section> */}
+        <footer className="mt-10 h-96 flex flex-col items-center">
+          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto">
             Have project in mind?
           </h1>
-          <p className='text-white mt-4 font-pt'>
-            Let's catch up
+          <p className="text-white mt-4 font-pt">
+            Let's catch up. Send me over a message
           </p>
         </footer>
       </main>

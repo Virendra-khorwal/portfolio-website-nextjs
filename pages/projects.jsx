@@ -1,10 +1,50 @@
+import Head from "next/head";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import PorjectCard from "../components/ProjectCard";
+
+import {
+  DispatchCursor,
+  CURSOR_HIDE,
+  CURSOR_COLOR,
+
+} from "haspr-cursor";
 
 const Projects = () => {
-    return (
-        <h1>
-            Projects
-        </h1>
-    )
-}
+  const dispatch = DispatchCursor();
+  const [res, setRes] = useState([]);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/Virendra-Khorwal/repos")
+      .then((response) => response.json())
+      .then((response) => setRes(response))
+      .then((error) => console.error(error));
+    setProjects(res.filter((r) => r.topics.includes("portfolio-tag")));
+  }, [res]);
+
+  // console.log(projects)
+
+  return (
+    <>
+      <Head>
+        <title>Projects | Virendra Khorwal</title>
+      </Head>
+      <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
+        {projects.map((project) => (
+          <section key={project.id} className="h-screen py-20">
+            <Link
+              className="cursor-none"
+              target="_blank"
+              href={project.html_url}
+            >
+              <PorjectCard project={project} />
+            </Link>
+          </section>
+        ))}
+      </main>
+    </>
+  );
+};
 
 export default Projects;
