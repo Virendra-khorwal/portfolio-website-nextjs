@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Navbar from '../components/Navbar';
-
 import {
   DispatchCursor,
   CURSOR_SHOW,
@@ -25,9 +23,10 @@ import avatar5 from '../assets/image/avatar5.png'
 import gradImg1 from '../assets/image/1.png'
 import gradImg2 from '../assets/image/2.png'
 import gradImg3 from '../assets/image/3.png'
+import PorjectCard from '../components/ProjectCard';
 
 export default function Home() {
-  const dispatch = DispatchCursor()
+  const dispatch = DispatchCursor();
   return (
     <>
       <Head>
@@ -37,9 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
-        
-        <Navbar />
+      <main>
         <div className="flex relative">
           <Image
             alt="gradient"
@@ -88,32 +85,46 @@ export default function Home() {
             className="flex flex-1"
           >
             <Image
-              className="flex absolute w-44 rounded-lg top-36 z-10 right-72 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 rounded-lg top-36 z-10 right-72 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar1}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-44 top-60 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 rounded-lg right-44 top-60 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar2}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-[460px] top-32 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 rounded-lg right-[460px] top-32 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar3}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-[600px] top-56 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 rounded-lg right-[600px] top-56 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar4}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-96 top-96 hover:z-50 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 rounded-lg right-96 top-96 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar5}
               alt="Virendra"
             />
           </div>
         </section>
+        <section className="py-10 h-screen">
+          <PorjectCard />
+        </section>
+        <section className="py-10 h-screen">
+          <PorjectCard />
+        </section>
+        <footer className='mt-10 h-96 flex items-center flex-col'>
+          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
+            Have project in mind?
+          </h1>
+          <p className='text-white mt-4 font-pt'>
+            Let's catch up
+          </p>
+        </footer>
       </main>
     </>
   );

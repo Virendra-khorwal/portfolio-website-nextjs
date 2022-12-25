@@ -37,6 +37,8 @@ module.exports = {
         pink3: "#9599E2",
         yellow1: "#FBAB7E",
         yellow2: "#F7CE68",
+        yellow3: "#f4a362",
+        red1: " #e24267",
       },
       fontFamily: {
         roboto: ["Roboto Slab", "serif"],
