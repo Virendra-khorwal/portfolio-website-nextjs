@@ -32,7 +32,7 @@ const About = () => {
             onMouseLeave={() => CURSOR_EXCLUSION(dispatch, "END")}
             className="bg-lightBlack rounded-sm flex w-5/6 justify-around p-8 items-center"
           >
-            <p className="text-white font-pt w-3/6">
+            <p className="text-white text-2xl font-pt w-3/6">
               Student, Web Developer, App Developer, UI designer. I have 3+
               years of experience in web development and UI designing 1 year of
               experience in app development. Learning web3 dev with{" "}

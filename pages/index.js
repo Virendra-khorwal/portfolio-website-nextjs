@@ -3,15 +3,10 @@ import Image from 'next/image'
 
 import {
   DispatchCursor,
-  CURSOR_SHOW,
   CURSOR_HIDE,
   CURSOR_COLOR,
-  CURSOR_TEXT,
   CURSOR_EXCLUSION,
-  CURSOR_STICKY,
-  CURSOR_MAGNETIC,
   CURSOR_REVEAL,
-  CURSOR_UNDERLINE,
 } from "haspr-cursor";
 
 import avatar1 from '../assets/image/avatar1.png'
@@ -37,7 +32,7 @@ export default function Home() {
       </Head>
 
       <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
-        <div className="flex relative">
+        <div className="flex relative md:hidden">
           <Image
             alt="gradient"
             src={gradImg1}
@@ -56,15 +51,15 @@ export default function Home() {
         </div>
         <section className="flex justify-between md:flex-col h-screen">
           <div className="flex flex-col gap-14 justify-center h-full flex-1">
-            <h1 className="text-8xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
-              Hi, I'm Virendra Khorwal.
+            <h1 className="text-8xl xl:text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
+              Hi, I am Virendra Khorwal.
             </h1>
             <p
               onMouseEnter={() =>
                 CURSOR_REVEAL(dispatch, "START", "imRevealing", "SMALL")
               }
               onMouseLeave={() => CURSOR_REVEAL(dispatch, "END", "imRevealing")}
-              className="text-xl text-pink1 font-pt"
+              className="text-xl xl:text-lg text-pink1 font-pt"
             >
               <span data-magnetism id="imRevealing" className="">
                 Web Developer
@@ -85,27 +80,27 @@ export default function Home() {
             className="flex flex-1"
           >
             <Image
-              className="flex absolute w-44 rounded-lg top-36 z-10 right-72 hover:z-40 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 xl:w-36 lg:w-28 md:top-[600px] rounded-lg top-36 z-10 right-72 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar1}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-44 top-60 hover:z-40 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 xl:w-36 lg:w-28 md:top-[500px] rounded-lg right-44 top-60 hover:z-40 hover:scale-125 transition-all ease-in-out"
               src={avatar2}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-[460px] top-32 hover:z-40 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 xl:w-36 lg:w-28 xl:right-[360px] rounded-lg right-[460px] top-32 hover:z-40 hover:scale-125 transition-all ease-in-out md:top-[450px]"
               src={avatar3}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-[600px] top-56 hover:z-40 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-[600px] top-56 hover:z-40 hover:scale-125 xl:right-[400px] transition-all ease-in-out md:top-[540px]"
               src={avatar4}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 rounded-lg right-96 top-96 hover:z-40 hover:scale-125 transition-all ease-in-out"
+              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-96 top-96 hover:z-40 hover:scale-125 xl:right-72 transition-all ease-in-out md:top-[500px]"
               src={avatar5}
               alt="Virendra"
             />
@@ -122,8 +117,11 @@ export default function Home() {
             Have project in mind?
           </h1>
           <p className="text-white mt-4 font-pt">
-            Let's catch up. Send me over a message
+            Let catch up. Send me over a message
           </p>
+          <button className="text-white bg-red1 p-3 rounded-sm mt-6">
+            Message Me ✉️
+          </button>
         </footer>
       </main>
     </>

@@ -10,16 +10,10 @@ import Image from "next/image";
 
 import {
   DispatchCursor,
-  CURSOR_SHOW,
   CURSOR_HIDE,
   CURSOR_COLOR,
   CURSOR_TEXT,
-  CURSOR_EXCLUSION,
-  CURSOR_STICKY,
-  CURSOR_MAGNETIC,
-  CURSOR_VIDEO,
-  CURSOR_REVEAL,
-  CURSOR_UNDERLINE,
+
 } from "haspr-cursor";
 import Link from "next/link";
 
