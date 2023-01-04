@@ -22,6 +22,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <HasprCursor>
+        <div className="bg-amber-300 text-center p-1">
+          <p>Use desktop for better view. Soon mobile is also updated.</p>
+        </div>
         <div
           className="px-28 cursor-none"
           onMouseEnter={() => CURSOR_COLOR("RED")}

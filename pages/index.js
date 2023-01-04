@@ -19,9 +19,14 @@ import gradImg1 from '../assets/image/1.png'
 import gradImg2 from '../assets/image/2.png'
 import gradImg3 from '../assets/image/3.png'
 import PorjectCard from '../components/ProjectCard';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const dispatch = DispatchCursor();
+  const router = useRouter()
+
+  const navigateTo = () => (router.push('/contact'))
+
   return (
     <>
       <Head>
@@ -119,7 +124,7 @@ export default function Home() {
           <p className="text-white mt-4 font-pt">
             Let catch up. Send me over a message
           </p>
-          <button className="text-white bg-red1 p-3 rounded-sm mt-6">
+          <button className="text-white bg-red1 p-3 rounded-sm mt-6 cursor-none hover:scale-110 transition-all ease-in-out" onClick={navigateTo} >
             Message Me ✉️
           </button>
         </footer>
