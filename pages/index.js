@@ -56,7 +56,7 @@ export default function Home() {
         </div>
         <section className="flex justify-between md:flex-col h-screen">
           <div className="flex flex-col gap-14 justify-center h-full flex-1">
-            <h1 className="text-8xl xl:text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto">
+            <h1 className="text-8xl xl:text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto sm:text-4xl">
               Hi, I am Virendra Khorwal.
             </h1>
             <p
@@ -64,7 +64,7 @@ export default function Home() {
                 CURSOR_REVEAL(dispatch, "START", "imRevealing", "SMALL")
               }
               onMouseLeave={() => CURSOR_REVEAL(dispatch, "END", "imRevealing")}
-              className="text-xl xl:text-lg text-pink1 font-pt"
+              className="text-xl xl:text-lg sm:text-sm text-pink1 font-pt"
             >
               <span data-magnetism id="imRevealing" className="">
                 Web Developer
@@ -95,17 +95,17 @@ export default function Home() {
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 xl:w-36 lg:w-28 xl:right-[360px] rounded-lg right-[460px] top-32 hover:z-40 hover:scale-125 transition-all ease-in-out md:top-[450px]"
+              className="flex absolute w-44 xl:w-36 lg:w-28 xl:right-[360px] rounded-lg right-[460px] top-32 hover:z-40 hover:scale-125 transition-all ease-in-out md:top-[450px] sm:right-72"
               src={avatar3}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-[600px] top-56 hover:z-40 hover:scale-125 xl:right-[400px] transition-all ease-in-out md:top-[540px]"
+              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-[600px] top-56 hover:z-40 hover:scale-125 xl:right-[400px] transition-all ease-in-out md:top-[540px] sm:right-36"
               src={avatar4}
               alt="Virendra"
             />
             <Image
-              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-96 top-96 hover:z-40 hover:scale-125 xl:right-72 transition-all ease-in-out md:top-[500px]"
+              className="flex absolute w-44 xl:w-36 lg:w-28 rounded-lg right-96 top-96 hover:z-40 hover:scale-125 xl:right-72 transition-all ease-in-out md:top-[500px] sm:right-8"
               src={avatar5}
               alt="Virendra"
             />
@@ -118,13 +118,16 @@ export default function Home() {
           <PorjectCard />
         </section> */}
         <footer className="mt-10 h-96 flex flex-col items-center">
-          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto">
+          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto sm:text-4xl">
             Have project in mind?
           </h1>
           <p className="text-white mt-4 font-pt">
             Let catch up. Send me over a message
           </p>
-          <button className="text-white bg-red1 p-3 rounded-sm mt-6 cursor-none hover:scale-110 transition-all ease-in-out" onClick={navigateTo} >
+          <button
+            className="text-white bg-red1 p-3 rounded-sm mt-6 cursor-none hover:scale-110 transition-all ease-in-out"
+            onClick={navigateTo}
+          >
             Message Me ✉️
           </button>
         </footer>

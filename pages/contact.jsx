@@ -58,23 +58,23 @@ const Contact = () => {
               Contact Me
             </h1>
             <form
-              className="flex flex-col gap-y-6 bg-lightBlack p-6 rounded-sm w-5/6 max-w-2xl"
+              className="flex flex-col gap-y-6 bg-lightBlack p-6 rounded-sm w-5/6 max-w-2xl sm:text-sm"
               ref={form}
               onSubmit={sendEmail}
             >
-              <div className="flex items-center">
+              <div className="flex items-center sm:flex-col sm:gap-2 sm:items-start">
                 <label className="w-36 text-white">
                   Name<span className="text-red1">*</span>
                 </label>
                 <input
                   placeholder="Name"
-                  className="p-3 rounded-sm bg-darkBlack focus:outline-yellow1 outline-none text-white w-full"
+                  className="p-3 rounded-sm bg-darkBlack focus:outline-yellow1 outline-none text-white w-full sm:p-2"
                   type="text"
                   name="user_name"
                   required
                 />
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center sm:flex-col sm:gap-2 sm:items-start">
                 <label className="w-36 text-white">
                   Email<span className="text-red1">*</span>
                 </label>
@@ -86,7 +86,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="flex items-start">
+              <div className="flex items-start sm:flex-col sm:gap-2">
                 <label className="w-36 text-white">
                   Message<span className="text-red1">*</span>
                 </label>
@@ -99,7 +99,7 @@ const Contact = () => {
               </div>
 
               <input
-                className="bg-gradient-to-r from-blue1 to-red rounded-sm py-2 text-white cursor-pointer text-xl hover:from-red1 hover:to-blue1 transition-all ease-in-out mt-4"
+                className="bg-gradient-to-r from-blue1 to-red rounded-sm py-2 text-white cursor-pointer text-xl hover:from-red1 hover:to-blue1 transition-all ease-in-out mt-4 sm:text-sm"
                 type="submit"
                 value="Send"
               />

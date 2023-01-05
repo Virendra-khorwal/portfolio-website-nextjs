@@ -32,7 +32,7 @@ const Projects = () => {
       </Head>
       <main onMouseEnter={() => CURSOR_COLOR("RED")} onMouseLeave={CURSOR_HIDE}>
         {projects.map((project) => (
-          <section key={project.id} className="h-screen py-20">
+          <section key={project.id} className="h-screen sm:h-full py-20 sm:py-4 md:h-full">
             <Link
               className="cursor-none"
               target="_blank"

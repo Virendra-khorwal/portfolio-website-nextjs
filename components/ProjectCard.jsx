@@ -24,9 +24,9 @@ const PorjectCard = ({project}) => {
       <div
         onMouseEnter={() => CURSOR_TEXT(dispatch, "Visit Project Repo", "RED")}
         onMouseLeave={() => CURSOR_TEXT(dispatch, "END")}
-        className="h-full flex flex-col p-8 bg-lightBlack rounded-sm items-center gap-y-8"
+        className="h-full flex flex-col p-8 bg-lightBlack rounded-sm items-center gap-y-8 sm:gap-y-2 sm:p-4"
       >
-        <h1 className="text-white font-pt">
+        <h1 className="text-white font-pt sm:text-sm">
             {project.name}
         </h1>
         <Image

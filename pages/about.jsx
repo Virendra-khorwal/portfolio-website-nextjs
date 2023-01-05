@@ -30,9 +30,9 @@ const About = () => {
           <div
             onMouseEnter={() => CURSOR_EXCLUSION(dispatch, "START", "LARGE")}
             onMouseLeave={() => CURSOR_EXCLUSION(dispatch, "END")}
-            className="bg-lightBlack rounded-sm flex w-5/6 justify-around p-8 items-center"
+            className="bg-lightBlack rounded-sm flex w-5/6 justify-around p-8 sm:px-6 sm:gap-4 md:w-full items-center md:flex-col"
           >
-            <p className="text-white text-2xl font-pt w-3/6">
+            <p className="text-white text-2xl md:text-sm font-pt w-3/6 md:w-full">
               Student, Web Developer, App Developer, UI designer. I have 3+
               years of experience in web development and UI designing 1 year of
               experience in app development. Learning web3 dev with{" "}

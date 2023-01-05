@@ -66,7 +66,7 @@ const LinkTree = () => {
         <h1 className="mt-10 text-3xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto">
           Link Tree
         </h1>
-        <div className="w-full flex flex-col gap-4 items-center">
+        <div className="w-full flex flex-col gap-4 sm:items-stretch items-center">
           {Links.map((link) => (
             <div
               key={link.link}
@@ -74,11 +74,11 @@ const LinkTree = () => {
                 CURSOR_TEXT(dispatch, `Visit ${link.title} Profile`, "RED")
               }
               onMouseLeave={() => CURSOR_TEXT(dispatch, "END")}
-              className="flex w-96 gap-4 rounded-sm p-4 items-center
+              className="flex w-96 sm:w-auto sm:p-2 gap-4 rounded-sm p-4 items-center
               bg-orange-300 hover:shadow-2xl hover:shadow-indigo-500/10"
             >
-              <Image className="w-10 h-10" src={link.logo} alt={link.title} />
-              <h1 className="text-darkBlack text-lg">
+              <Image className="w-10 h-10 sm:w-8 sm:h-8" src={link.logo} alt={link.title} />
+              <h1 className="text-darkBlack text-lg sm:text-sm">
                 <Link className="cursor-none" target="_blank" href={link.link}>
                   {link.title} | Virendra Khorwal
                 </Link>
