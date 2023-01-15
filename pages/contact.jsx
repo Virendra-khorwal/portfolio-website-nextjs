@@ -9,9 +9,11 @@ import {
   CURSOR_TEXT,
 } from "haspr-cursor";
 
-const SERVICE_ID = process.env.SERVICE_ID;
-const TEMPLATE_ID = process.env.TEMPLATE_ID;
-const PUBLIC_KEY = process.env.EMAIL_KEY;
+import { toast } from "react-toastify";
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_KEY;
 
 const Contact = () => {
     const form = useRef();
@@ -29,12 +31,19 @@ const Contact = () => {
         )
         .then(
           (result) => {
-            console.log(result.text);
+            console.log(result.status)
+            if(result.status === 200){
+              toast.success("Message sent successfully 📧")
+            }
+            e.target.reset();
           },
           (error) => {
             console.log(error.text);
+            toast.error("Message sending failed, try again ⛔")
+            e.target.reset();
           }
         );
+      
     };
     return (
       <>
@@ -47,13 +56,7 @@ const Contact = () => {
             onMouseEnter={() => CURSOR_COLOR("RED")}
             onMouseLeave={CURSOR_HIDE}
           >
-            {/* FIX Remove this div tag after fixing contact form. */}
-            <div className="bg-yellow-400 rounded p-1 text-white">
-              <p>
-                This page is under working, Currently it will not work. To DM me
-                visit Link Tree Page.
-              </p>
-            </div>
+            
             <h1 className="mt-10 mb-10 text-3xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto ">
               Contact Me
             </h1>

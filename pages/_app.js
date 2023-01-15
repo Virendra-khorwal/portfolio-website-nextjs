@@ -15,6 +15,8 @@ import {
   CURSOR_REVEAL,
   CURSOR_UNDERLINE,
 } from "haspr-cursor";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function App({ Component, pageProps }) {
@@ -22,7 +24,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <HasprCursor>
-        
         <div
           className="px-28 sm:px-10 cursor-none"
           onMouseEnter={() => CURSOR_COLOR("RED")}
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </div>
       </HasprCursor>
+      <ToastContainer />
     </>
   );
 }
