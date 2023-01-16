@@ -5,15 +5,8 @@ import Navbar from '../components/Navbar';
 
 import {
   DispatchCursor,
-  CURSOR_SHOW,
   CURSOR_HIDE,
   CURSOR_COLOR,
-  CURSOR_TEXT,
-  CURSOR_EXCLUSION,
-  CURSOR_STICKY,
-  CURSOR_MAGNETIC,
-  CURSOR_REVEAL,
-  CURSOR_UNDERLINE,
 } from "haspr-cursor";
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

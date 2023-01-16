@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 import {
   DispatchCursor,
@@ -9,23 +10,23 @@ import {
   CURSOR_REVEAL,
 } from "haspr-cursor";
 
-import avatar1 from '../assets/image/avatar1.png'
-import avatar2 from '../assets/image/avatar2.png'
-import avatar3 from '../assets/image/avatar3.png'
-import avatar4 from '../assets/image/avatar4.png'
-import avatar5 from '../assets/image/avatar5.png'
+import avatar1 from "../assets/image/avatar1.png";
+import avatar2 from "../assets/image/avatar2.png";
+import avatar3 from "../assets/image/avatar3.png";
+import avatar4 from "../assets/image/avatar4.png";
+import avatar5 from "../assets/image/avatar5.png";
 
-import gradImg1 from '../assets/image/1.png'
-import gradImg2 from '../assets/image/2.png'
-import gradImg3 from '../assets/image/3.png'
-import PorjectCard from '../components/ProjectCard';
-import { useRouter } from 'next/router';
+import gradImg1 from "../assets/image/1.png";
+import gradImg2 from "../assets/image/2.png";
+import gradImg3 from "../assets/image/3.png";
+import PorjectCard from "../components/ProjectCard";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const dispatch = DispatchCursor();
-  const router = useRouter()
+  const router = useRouter();
 
-  const navigateTo = () => (router.push('/contact'))
+  const navigateTo = () => router.push("/contact");
 
   return (
     <>
@@ -55,16 +56,46 @@ export default function Home() {
           />
         </div>
         <section className="flex justify-between md:flex-col h-screen">
-          <div className="flex flex-col gap-14 justify-center h-full flex-1">
-            <h1 className="text-8xl xl:text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto sm:text-4xl">
+          <motion.div className="flex flex-col gap-14 justify-center h-full flex-1">
+            <motion.h1
+              className="text-8xl xl:text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red w-full break-words font-roboto sm:text-4xl"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  x: -50,
+                },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                },
+              }}
+            >
               Hi, I am Virendra Khorwal.
-            </h1>
-            <p
+            </motion.h1>
+            <motion.p
               onMouseEnter={() =>
                 CURSOR_REVEAL(dispatch, "START", "imRevealing", "SMALL")
               }
               onMouseLeave={() => CURSOR_REVEAL(dispatch, "END", "imRevealing")}
               className="text-xl xl:text-lg sm:text-sm text-pink1 font-pt"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 50,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
             >
               <span data-magnetism id="imRevealing" className="">
                 Web Developer
@@ -77,12 +108,26 @@ export default function Home() {
                 {" "}
                 | UI designer
               </span>
-            </p>
-          </div>
-          <div
+            </motion.p>
+          </motion.div>
+          <motion.div
             onMouseEnter={() => CURSOR_EXCLUSION(dispatch, "START", "LARGE")}
             onMouseLeave={() => CURSOR_EXCLUSION(dispatch, "END")}
             className="flex flex-1"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                x: 100,
+              },
+              visible: {
+                opacity: 1,
+                x: 10,
+              },
+            }}
           >
             <Image
               className="flex absolute w-44 xl:w-36 lg:w-28 md:top-[600px] rounded-lg top-36 z-10 right-72 hover:z-40 hover:scale-125 transition-all ease-in-out"
@@ -109,7 +154,7 @@ export default function Home() {
               src={avatar5}
               alt="Virendra"
             />
-          </div>
+          </motion.div>
         </section>
         {/* <section className="py-10 h-screen">
           <PorjectCard />
@@ -118,18 +163,67 @@ export default function Home() {
           <PorjectCard />
         </section> */}
         <footer className="mt-10 h-96 flex flex-col items-center">
-          <h1 className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto sm:text-4xl">
+          <motion.h1
+            className="text-6xl bg-clip-text text-transparent  bg-gradient-to-r from-blue1 to-red font-roboto sm:text-4xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 50,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+          >
             Have project in mind?
-          </h1>
-          <p className="text-white mt-4 font-pt">
+          </motion.h1>
+          <motion.p
+            className="text-white mt-4 font-pt"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                y: 50,
+              },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
+          >
             Let catch up. Send me over a message
-          </p>
-          <button
+          </motion.p>
+          <motion.button
             className="text-white bg-red1 p-3 rounded-sm mt-6 cursor-none hover:scale-110 transition-all ease-in-out"
             onClick={navigateTo}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5, type: "tween" }}
+            variants={{
+              hidden: {
+                opacity: 0,
+                scale: 0,
+              },
+              visible: {
+                opacity: 1,
+                scale: 1,
+              },
+            }}
+            whileHover={{
+              scale: 1.2,
+            }}
           >
             Message Me ✉️
-          </button>
+          </motion.button>
         </footer>
       </main>
     </>

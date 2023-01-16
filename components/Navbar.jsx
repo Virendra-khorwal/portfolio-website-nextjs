@@ -8,7 +8,6 @@ import { useState } from "react";
 const Navbar = () => {
   const dispatch = DispatchCursor();
   const router = useRouter()
-  console.log(router)
 
   const [toggleMenu, setToggleMenu] = useState(false)
 
