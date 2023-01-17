@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import {
   DispatchCursor,
@@ -21,14 +22,26 @@ const PorjectCard = ({project}) => {
     let ImgUrl = `https://raw.githubusercontent.com/Virendra-khorwal/${project.name}/${project.default_branch}/homepage.png`;
     // console.log(ImgUrl)
     return (
-      <div
+      <motion.div
         onMouseEnter={() => CURSOR_TEXT(dispatch, "Visit Project Repo", "RED")}
         onMouseLeave={() => CURSOR_TEXT(dispatch, "END")}
         className="h-full flex flex-col p-8 bg-lightBlack rounded-sm items-center gap-y-8 sm:gap-y-2 sm:p-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ delay: 0.2, duration: 0.5, }}
+        variants={{
+          hidden: {
+            opacity: 0,
+            scale:0,
+          },
+          visible: {
+            opacity: 1,
+            scale: 1,
+          },
+        }}
       >
-        <h1 className="text-white font-pt sm:text-sm">
-            {project.name}
-        </h1>
+        <h1 className="text-white font-pt sm:text-sm">{project.name}</h1>
         <Image
           width={1200}
           height={1000}
@@ -36,7 +49,7 @@ const PorjectCard = ({project}) => {
           src={ImgUrl}
           alt={project.name}
         />
-      </div>
+      </motion.div>
     );
 }
 

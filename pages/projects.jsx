@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import loadingAnimation from "../assets/loading.json";
 
 import PorjectCard from "../components/ProjectCard";
 
@@ -25,6 +27,14 @@ const Projects = () => {
   }, [res]);
 
   // console.log(projects)
+
+  if(projects.length <= 0 ) {
+    return (
+      <div className="mt-36">
+        <Player className="w-96" src={loadingAnimation} autoplay loop />
+      </div>
+    );
+  }
 
   return (
     <>
