@@ -19,7 +19,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Virendra-Khorwal/repos")
+    fetch("https://api.github.com/users/Virendra-Khorwal/repos?sort=created&per_page=100")
       .then((response) => response.json())
       .then((response) => setRes(response))
       .then((error) => console.error(error));
